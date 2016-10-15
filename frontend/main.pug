@@ -1,0 +1,13 @@
+include blocks/layout/layout
+include blocks/button/button
+
+html
+  head
+    title Resume
+  body
+    +layout()
+      h1 standard buttons
+      +button('button', '', 'small')
+      +button('button')
+      +button('button', 'error')
+      +button('button', 'error', 'small')
