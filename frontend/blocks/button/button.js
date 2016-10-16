@@ -30,9 +30,9 @@ $(function() {
             $(this).removeClass('button_pressed');
         })
         .on('click', function (event) {
-            if ($(this).hasClass('button_disabled'))
-                $(this).removeClass('button_disabled');
+            if ($(this).hasClass('button_inactive'))
+                $(this).removeClass('button_inactive');
             else
-                $(this).addClass('button_disabled');
+                $(this).addClass('button_inactive');
         });
 });

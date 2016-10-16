@@ -1,5 +1,7 @@
 include blocks/layout/layout
 include blocks/button/button
+include blocks/arrow-button/arrow-button
+include blocks/percentage/percentage
 
 html
   head
@@ -11,3 +13,15 @@ html
       +button('button')
       +button('button', 'error')
       +button('button', 'error', 'small')
+      h1 arrow buttons
+      +arrow-button('left', 'inactive')
+      +arrow-button('right', 'inactive')
+      +arrow-button('left', 'disabled')
+      +arrow-button('right', 'disabled')
+      +arrow-button('left')
+      +arrow-button('right')
+      h1 percentages / pie chart
+      +percentage(0)
+      +percentage(38)
+      +percentage(62)
+      +percentage(89)

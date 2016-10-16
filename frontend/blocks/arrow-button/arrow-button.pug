@@ -1,0 +1,3 @@
+mixin arrow-button(direction, condition)
+  button.arrow-button(class = condition ? 'arrow-button_' + condition : '')
+    i.fa(class = direction ? 'fa-angle-' + direction : '')

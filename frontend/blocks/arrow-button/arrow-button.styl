@@ -1,0 +1,29 @@
+.arrow-button
+  position relative
+  outline none
+  cursor pointer
+  background-color color-first
+  color white
+  border-radius 50%
+  border 3px solid color-first
+  font-size 3.5rem
+  vertical-align middle
+  text-align center
+  width 50px
+  height 50px
+
+  &_inactive
+    background-color white
+    color color-first
+
+  &_disabled
+    background-color color-disabled
+    border-color color-disabled
+
+  & .fa-angle-left
+    margin-left -4px
+    margin-top -2px
+
+  & .fa-angle-right
+    margin-right -4px
+    margin-top -2px
