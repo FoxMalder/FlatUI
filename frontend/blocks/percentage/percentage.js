@@ -1,3 +1,5 @@
+'use strict'
+
 $(function() {
 
     $('.percentage__active-border').each(function() {

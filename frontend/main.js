@@ -2,6 +2,6 @@
 
 import './main.styl';
 
-import './blocks/button/button'
-
-import './blocks/percentage/percentage'
+import './blocks/button/button';
+import './blocks/percentage/percentage';
+import './blocks/pie-chart/pie-chart';
