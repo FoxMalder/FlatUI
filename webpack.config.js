@@ -47,7 +47,10 @@ module.exports = {
         loaders: [{
             test: /\.js$/,
             loader: 'babel',
-            exclude: /node_modules/,
+            exclude: [
+                /node_modules/,
+                /jquery-ui.js/
+            ],
             query: {
                 presets: ['es2015']
             }
@@ -65,6 +68,6 @@ module.exports = {
             loader: 'file?name=[path][name].[ext]'
         }],
 
-        //noParse: /node_modules\\jquery/
+        noParse: /node_modules\\jquery/
     }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-import './jquery.peity.js';
+import '../../plugins/jquery.peity.js';
 
 $(function() {
 

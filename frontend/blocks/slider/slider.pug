@@ -1,0 +1,13 @@
+mixin slider(tooltip, scale, color)
+  .slider(data-slider-color = color)
+    .slider__widget
+      .slider__handle.ui-slider-handle
+        if tooltip
+          .slider__handle-tooltip
+    if scale
+      .slider__scale
+        span.slider__scale-item 0
+        span.slider__scale-item 25
+        span.slider__scale-item 50
+        span.slider__scale-item 75
+        span.slider__scale-item 100
