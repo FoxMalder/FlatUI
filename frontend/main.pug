@@ -5,10 +5,13 @@ include blocks/percentage/percentage
 include blocks/pie-chart/pie-chart
 include blocks/slider/slider
 include blocks/stages/stages
+include blocks/feedback/feedback
+include blocks/toggle/toggle
 
 html
   head
     title FlatUI
+    meta(charset = 'utf-8')
   body
     +layout()
       h1 standard buttons
@@ -38,3 +41,12 @@ html
     +layout()
       h1 stages
       +stages(5, 3)
+    +layout()
+      h1 form elements
+      +layout__left-column()
+        +feedback()
+      +layout__right-column()
+        //h1 toggles
+        //+toggle()
+        //h1 tick boxes
+

@@ -7,3 +7,5 @@ import './blocks/percentage/percentage';
 import './blocks/pie-chart/pie-chart';
 import './blocks/slider/slider'
 import './blocks/stages/stages'
+import './blocks/feedback/feedback'
+import './blocks/toggle/toggle'
