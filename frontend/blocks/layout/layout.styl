@@ -10,25 +10,27 @@
     padding 0 7%
     text-align center
 
-  &__left-column
-    float left
-    width 50%
-    padding-right 3%
+    & > .button
+      margin-left 10px
+      margin-right 10px
 
-  &__right-column
-    float right
-    width 50%
-    padding-left 3%
-
-  & > .button
-    margin-left 10px
-    margin-right 10px
-
-  & > .arrow-button
-    margin-left 12px
-    margin-right 12px
+    & > .arrow-button
+      margin-left 12px
+      margin-right 12px
 
   & .percentage
   & .pie-chart
     margin-left 11px
     margin-right 11px
+
+@media screen and (min-width: 500px)
+  .layout
+    &__left-column
+      float left
+      width 50%
+      padding-right 3%
+
+    &__right-column
+      float right
+      width 50%
+      padding-left 3%
