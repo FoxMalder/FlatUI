@@ -7,6 +7,7 @@ include blocks/slider/slider
 include blocks/stages/stages
 include blocks/feedback/feedback
 include blocks/toggle/toggle
+include blocks/tick-box/tick-box
 
 html
   head
@@ -48,6 +49,6 @@ html
       +layout__right-column()
         h1 toggles
         +toggle()
-        +toggle({state: 'on', textOn: 'yes', textOff: 'no'})
+        +toggle({state: true, textOn: 'yes', textOff: 'no'})
         h1 tick boxes
 
