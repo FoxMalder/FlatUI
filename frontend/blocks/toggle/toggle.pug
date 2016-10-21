@@ -1,3 +1,24 @@
-mixin toggle()
-  .toggle
-    input(type = 'checkbox').toggle__widget
+//options.textOn - текст Вкл.
+//options.textOff - текст Выкл.
+//options.state - состояние выключателя ('on' или 'off')
+
+mixin toggle(options)
+  - var textOn, textOff, state
+  if options
+    -
+      if(!options.textOn) textOn = 'on'
+      else textOn = options.textOn
+      if(!options.textOff) textOff = 'off'
+      else textOff = options.textOff
+      if(options.state) state = options.state
+  else
+    -
+      textOn = 'on'
+      textOff = 'off'
+
+  .toggle(class = state ? 'toggle_' + state : '')
+    .toggle__text
+      .toggle__text-on #{textOn}
+      .toggle__text-off #{textOff}
+    .toggle__switcher
+      .toggle__switch
