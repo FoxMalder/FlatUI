@@ -1,0 +1,55 @@
+.search
+  font-size 1.2rem
+  font-family SourceSansProRegular
+
+  &__form
+    display flex
+    align-items stretch
+
+  &__text
+    display block
+    width 100%
+    background-color #e5e5e5
+    color #888888
+    padding 0.55rem 1rem
+    border none
+    border-top-left-radius 3px
+    border-bottom-left-radius 3px
+    resize none
+    transition background-color 0.2s
+
+    &:focus
+      outline none
+
+  &__submit
+    display flex
+    justify-content center
+    align-items center
+    width 3.2rem
+    background-color color-second
+    color white
+    border none
+    border-top-right-radius 3px
+    border-bottom-right-radius 3px
+
+    &:focus
+      outline none
+
+  &_error &__text
+    background-color color-second
+
+
+    &[placeholder]
+      text-overflow ellipsis
+    &::-webkit-input-placeholder
+      color white
+      text-overflow ellipsis
+    &::-moz-placeholder
+      color white
+      text-overflow ellipsis
+    &:-moz-placeholder
+      color white
+      text-overflow ellipsis
+    &:-ms-input-placeholder
+      color white
+      text-overflow ellipsis

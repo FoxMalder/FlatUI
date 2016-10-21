@@ -8,6 +8,7 @@ include blocks/stages/stages
 include blocks/feedback/feedback
 include blocks/toggle/toggle
 include blocks/tick-box/tick-box
+include blocks/search/search
 
 html
   head
@@ -53,4 +54,9 @@ html
         h1 tick boxes
         +tick-box()
         +tick-box({state: true})
-
+    +layout()
+      +layout__left-column()
+        h1 search / drop down
+        +search()
+      +layout__right-column()
+        h1 user profile

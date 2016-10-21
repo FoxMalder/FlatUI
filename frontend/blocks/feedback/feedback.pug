@@ -9,11 +9,25 @@ mixin feedback()
   .feedback
     form.feedback__form
       .feedback__name
-        input.feedback__input-text(name = 'feedback-name', type = 'text', placeholder = 'Your Name', pattern = '^[A-Za-zА-Яа-яЁё\\s]+$')
+        input.feedback__input-text(
+          name = 'feedback-name'
+          type = 'text'
+          placeholder = 'Your Name'
+          pattern = '^[A-Za-zА-Яа-яЁё\\s]+$'
+        )
         +feedback__validation()
       .feedback__email
-        input.feedback__input-text(name = 'feedback-email', type = 'text', placeholder = 'Your Email', pattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$', required)
+        input.feedback__input-text(
+          name = 'feedback-email'
+          type = 'text'
+          placeholder = 'Your Email'
+          pattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
+          required
+        )
         +feedback__validation()
-      textarea.feedback__textarea(name = 'feedback-message', placeholder = 'Your Message')
+      textarea.feedback__textarea(
+        name = 'feedback-message'
+        placeholder = 'Your Message'
+      )
       .feedback__submit
         +button('submit')
