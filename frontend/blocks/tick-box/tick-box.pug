@@ -1,4 +1,10 @@
 //options.state - состояние tick-box'а (по-умолчанию true)
 
-mixin tick-box()
-  block
+mixin tick-box(options)
+  - var state
+
+  if options
+    - if (options.state) state = options.state
+
+  .tick-box(class = state ? 'tick-box_on' : '')
+    i.fa.fa-check
