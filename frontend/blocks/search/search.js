@@ -4,8 +4,7 @@ $(function () {
 
     function search(text) {
         //ищем text и возвращаем результат
-        console.log('Serching')
-    }
+    };
 
     $('.search').each(function () {
 
@@ -31,6 +30,6 @@ $(function () {
 
             $search.removeClass('search_error');
             $text.attr('placeholder', 'Search');
-        })
-    })
+        });
+    });
 });
