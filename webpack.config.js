@@ -6,7 +6,7 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    context: __dirname + '\\frontend',
+    context: __dirname + '/frontend',
 
     entry: {
         main: './main.js'
@@ -68,6 +68,6 @@ module.exports = {
             loader: 'file?name=[path][name].[ext]'
         }],
 
-        noParse: /node_modules\\jquery/
+        noParse: /node_modules\/jquery/
     }
 }
