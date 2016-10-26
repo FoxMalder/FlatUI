@@ -1,8 +1,5 @@
 'use strict'
 
-import '../../plugins/jquery-ui.css'
-import '../../plugins/jquery-ui'
-
 $(function() {
 
     $('.slider').each(function () {

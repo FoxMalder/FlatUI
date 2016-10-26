@@ -7,4 +7,5 @@ function requireAll(requireContext) {
 }
 
 requireAll(require.context('./plugins/', true, /^\.\/.*\.js$/));
+requireAll(require.context('./plugins/', true, /^\.\/.*\.css$/));
 requireAll(require.context('./blocks/', true, /^\.\/.*\.js$/));
