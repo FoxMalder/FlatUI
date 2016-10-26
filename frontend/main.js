@@ -2,13 +2,9 @@
 
 import './main.styl';
 
-import './blocks/button/button';
-import './blocks/percentage/percentage';
-import './blocks/pie-chart/pie-chart';
-import './blocks/slider/slider'
-import './blocks/stages/stages'
-import './blocks/feedback/feedback'
-import './blocks/toggle/toggle'
-import './blocks/search/search'
-import './blocks/user-profile/user-profile'
-import './blocks/drop-down/drop-down'
+function requireAll(requireContext) {
+    return requireContext.keys().map(requireContext);
+}
+
+requireAll(require.context('./plugins/', true, /^\.\/.*\.js$/));
+requireAll(require.context('./blocks/', true, /^\.\/.*\.js$/));

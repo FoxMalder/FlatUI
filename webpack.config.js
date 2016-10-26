@@ -62,7 +62,7 @@ module.exports = {
             loader: 'style!css' //!autoprefixer?browsers=last 2 versions'
         }, {
             test: /\.styl$/,
-            loader: ExtractTextPlugin.extract('!css!stylus?resolve url') //!autoprefixer?browsers=last 2 versions'
+            loader: ExtractTextPlugin.extract('css!stylus?resolve url') //!autoprefixer?browsers=last 2 versions'
         }, {
             test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
             loader: 'file?name=[path][name].[ext]'
