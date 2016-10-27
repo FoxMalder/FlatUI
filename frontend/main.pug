@@ -12,6 +12,7 @@ include blocks/search/search
 include blocks/user-profile/user-profile
 include blocks/drop-down/drop-down
 include blocks/news/news
+include blocks/event/event
 
 html
   head
@@ -20,10 +21,10 @@ html
   body
     +layout()
       h1 standard buttons
-      +button('button', '', 'small')
-      +button('button')
-      +button('button', 'error')
-      +button('button', 'error', 'small')
+      +button({size: 'small'})
+      +button()
+      +button({type: 'error'})
+      +button({type: 'error', size: 'small'})
       h1 arrow buttons
       +arrow-button('left', 'inactive')
       +arrow-button('right', 'inactive')

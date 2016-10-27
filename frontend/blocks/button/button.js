@@ -9,7 +9,7 @@ $(function() {
             xPos = event.pageX - btnOffset.left,
             yPos = event.pageY - btnOffset.top;
 
-        $div.addClass('button__ripple-effect');
+        $div.addClass('js-button__ripple-effect');
         $div.css({
                 top: yPos,
                 left: xPos
@@ -30,9 +30,9 @@ $(function() {
             $(this).removeClass('button_pressed');
         })
         .on('click', function (event) {
-            if ($(this).hasClass('button_inactive'))
-                $(this).removeClass('button_inactive');
+            if ($(this).hasClass('button_inverted'))
+                $(this).removeClass('button_inverted');
             else
-                $(this).addClass('button_inactive');
+                $(this).addClass('button_inverted');
         });
 });

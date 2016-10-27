@@ -1,4 +1,15 @@
-// btnType: '', 'error'
-// btnSize: '', 'small'
-mixin button(text, btnType, btnSize)
-  button.button(class = (btnType ? 'button_' + btnType + ' ' : '') + (btnSize ? ' button_' + btnSize : '')) #{text}
+//options.text - текст
+//options.size - размер ('', 'small')
+//options.type - тип ('', 'error')
+//options.isInverted - инвертирование цвета (bool)
+
+mixin button(options)
+  if !options
+    - options = {}
+
+  .button(
+    class = options.type ? 'button_' + options.type : '',
+    class = options.size ? 'button_' + options.size : '',
+    class = options.isInverted ? 'button_inverted' : ''
+  )
+    button= options.text ? options.text : 'Button'
