@@ -1,4 +1,4 @@
-.news
+.event
   display flex
   align-items stretch
   border-radius 0.3rem
@@ -22,29 +22,45 @@
     display flex
     flex-direction column
     align-items stretch
-    justify-content space-around
+    justify-content space-between
     width 65%
     padding 6.5% 7.5%
     border-top-right-radius 0.3rem
     border-bottom-right-radius 0.3rem
-    background-color color-second
+    background-color color-first
     color white
     text-align left
 
-    & > *:not(:first-child)
-      margin-top 4%
+  &__description
+    display flex
+    flex-direction column
+    align-items stretch
 
   &__title
-    font-family LatoLight
-    font-size 2.3rem
-    line-height 2.3rem
-
-  &__date
     font-family LatoBlack
     text-transform uppercase
+    font-size 1.15rem
 
-  &__description
+  &__date
+    display flex
+    align-items baseline
+    justify-content space-around
+    flex-shrink 0
+
+  &__day
+    font-family LatoLight
+    font-size 6rem
+    line-height 6rem
+
+  &__month
+    font-family LatoLight
+    font-size 2.5rem
+
+  &__text
     font-family LatoRegular
-    flex-basis 100%
     overflow hidden
     text-overflow ellipsis
+
+  &__button-add
+    text-align center
+    margin-top 5%
