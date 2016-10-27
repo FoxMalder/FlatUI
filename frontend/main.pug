@@ -11,6 +11,7 @@ include blocks/tick-box/tick-box
 include blocks/search/search
 include blocks/user-profile/user-profile
 include blocks/drop-down/drop-down
+include blocks/news/news
 
 html
   head
@@ -79,3 +80,14 @@ html
           photo: 'face2.jpg',
           twitter: 'https://vk.com'
         })
+    +layout()
+      h1 news & events
+      +layout__left-column()
+        +news({
+          image: "img1.jpg",
+          title: "It's all going downhill",
+          date: "24 august 2013",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+          " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        })
+      +layout__right-column()
