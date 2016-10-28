@@ -1,6 +1,13 @@
-mixin pie-chart(items)
+//- options.items
+
+mixin pie-chart(options)
+  if !options
+    - options = {}
+  if !options.items
+    - options.items = [ 1 ]
+
   - var itemsStr = ''
-  each item in items.length ? items : [ 1 ]
+  each item in options.items
     - itemsStr += item + ','
   - itemsStr = itemsStr.slice(0, itemsStr.length - 1)
 
