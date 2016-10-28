@@ -41,9 +41,9 @@ html
     +layout()
       h1 sliders
       +layout__left-column()
-        +slider(true, false, '#4eb7a8')
+        +slider({tooltipEnabled: true, color: '#4eb7a8'})
       +layout__right-column()
-        +slider(false, true, '#e75735')
+        +slider({scaleEnabled: true, color: '#e75735'})
     +layout()
       h1 stages
       +stages(5, 3)

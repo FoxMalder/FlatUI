@@ -1,10 +1,18 @@
-mixin slider(tooltip, scale, color)
-  .slider(data-slider-color = color)
+//-
+  options.tooltipEnabled - наличие подсказки (bool)
+  options.scaleEnabled - наличие шкалы (bool)
+  options.color - цвет слайдера
+
+mixin slider(options)
+  if !options
+    - options = {}
+
+  .slider(data-slider-color = options.color ? options.color : '#4eb7a8')
     .slider__widget
       .slider__handle.ui-slider-handle
-        if tooltip
+        if options.tooltipEnabled
           .slider__handle-tooltip
-    if scale
+    if options.scaleEnabled
       .slider__scale
         span.slider__scale-item 0
         span.slider__scale-item 25

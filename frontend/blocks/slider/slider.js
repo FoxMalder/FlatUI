@@ -26,13 +26,13 @@ $(function() {
         if($handleTooltip.length) {
             let $handle = $('.slider__handle', $(this));
             $handle.on('mousedown', function (event) {
-                $handleTooltip.addClass('slider__handle-tooltip_active')
+                $handleTooltip.addClass('js-slider__handle-tooltip_active')
             });
             $(this).on('mousedown', function (event) {
-                $handleTooltip.addClass('slider__handle-tooltip_active')
+                $handleTooltip.addClass('js-slider__handle-tooltip_active')
             });
             $('body').on('mouseup', function (event) {
-                $handleTooltip.removeClass('slider__handle-tooltip_active')
+                $handleTooltip.removeClass('js-slider__handle-tooltip_active')
             });
         }
     });

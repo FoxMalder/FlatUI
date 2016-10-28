@@ -3306,9 +3306,6 @@
   display: none;
   justify-content: center;
 }
-.slider__handle-tooltip_active {
-  display: flex;
-}
 .slider__handle-tooltip::before {
   content: '';
   display: block;
@@ -3330,6 +3327,9 @@
   font-family: LatoBlack;
   font-size: 0.9rem;
   color: #d1d1d1;
+}
+.js-slider__handle-tooltip_active {
+  display: flex;
 }
 .stages {
   display: flex;
