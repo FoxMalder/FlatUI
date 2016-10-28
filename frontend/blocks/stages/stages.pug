@@ -1,12 +1,19 @@
-mixin stages(length, progress)
-  -
-    if (length < 2) length = 2
-    if (progress <= 0) progress = 1
-    if (progress > length) progress = length
+//-
+  options.length - количество стадий
+  options.progress - количество завершенных стадий
 
-  .stages(data-progress = progress)
+mixin stages(options)
+  if !options
+    - options = {}
+
+  -
+    if (!options.length || options.length < 2) options.length = 2
+    if (!options.progress || options.progress <= 0) options.progress = 1
+    if (options.progress > options.length) options.progress = options.length
+
+  .stages(data-progress = options.progress)
     .stages__progress-bar
       .stages__progress
     .stages__items
-      - for (var i = 0; i < length; i++)
-        .stages__item(class = (progress > i) ? 'stages__item_completed' : '') #{i + 1}
+      - for (var i = 0; i < options.length; i++)
+        .stages__item(class = (options.progress > i) ? 'stages__item_completed' : '') #{i + 1}
