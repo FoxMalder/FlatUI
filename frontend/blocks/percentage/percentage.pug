@@ -1,5 +1,10 @@
-mixin percentage(perc)
+//- options.percent - проценты (от 0 до 100)
+
+mixin percentage(options)
+  if !options
+    - options = {}
+
   .percentage
-    .percentage__active-border(data-percent = perc)
+    .percentage__active-border(data-percent = options.percent ? options.percent : 0)
       .percentage__mask-circle
         span.percentage__percent 0
