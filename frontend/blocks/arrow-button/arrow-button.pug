@@ -1,3 +1,10 @@
-mixin arrow-button(direction, condition)
-  button.arrow-button(class = condition ? 'arrow-button_' + condition : '')
-    i.fa(class = direction ? 'fa-angle-' + direction : '')
+//-
+  options.direction - направление стрелки ('left', 'right')
+  options.condition - состояние кнопки ('', 'condition', 'disabled')
+
+mixin arrow-button(options)
+  if !options
+    - options = {}
+
+  button.arrow-button(class = options.condition ? 'arrow-button_' + options.condition : '')
+    i.fa(class = options.direction ? 'fa-angle-' + options.direction : 'fa-angle-left')

@@ -26,12 +26,12 @@ html
       +button({type: 'error'})
       +button({type: 'error', size: 'small'})
       h1 arrow buttons
-      +arrow-button('left', 'inactive')
-      +arrow-button('right', 'inactive')
-      +arrow-button('left', 'disabled')
-      +arrow-button('right', 'disabled')
-      +arrow-button('left')
-      +arrow-button('right')
+      +arrow-button({direction: 'left', condition: 'inactive'})
+      +arrow-button({direction: 'right', condition: 'inactive'})
+      +arrow-button({direction: 'left', condition: 'disabled'})
+      +arrow-button({direction: 'right', condition: 'disabled'})
+      +arrow-button({direction: 'left'})
+      +arrow-button({direction: 'right'})
       h1 percentages / pie chart
       +percentage(0)
       +percentage(38)
