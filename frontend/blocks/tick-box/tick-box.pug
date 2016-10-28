@@ -1,10 +1,8 @@
-//options.state - состояние tick-box'а (по-умолчанию true)
+//- options.enabled - состояние tick-box'а (bool)
 
 mixin tick-box(options)
-  - var state
+  if !options
+    - options = {}
 
-  if options
-    - if (options.state) state = options.state
-
-  .tick-box(class = state ? 'tick-box_on' : '')
+  .tick-box(class = options.enabled ? 'tick-box_enable' : '')
     i.fa.fa-check

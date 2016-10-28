@@ -3388,7 +3388,7 @@
   align-items: center;
   transition: background-color 0.2s, color 0.2s;
 }
-.tick-box_on {
+.tick-box_enable {
   background-color: #4eb7a8;
   color: #fff;
 }
