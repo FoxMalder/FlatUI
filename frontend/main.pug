@@ -13,11 +13,16 @@ include blocks/user-profile/user-profile
 include blocks/drop-down/drop-down
 include blocks/news/news
 include blocks/event/event
+include blocks/location/location
 
 html
   head
     title FlatUI
     meta(charset = 'utf-8')
+    script(
+      src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU',
+      type = 'text/javascript'
+    )
   body
     +layout()
       h1 standard buttons
@@ -99,3 +104,9 @@ html
           dateMonth: "August",
           desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         })
+    +layout()
+      h1 location
+      +location({
+        coord: [56.4531907, 84.9756513],
+        adress: "Tomsk, Krasnoarmeyskaya, 147<br/> office 201"
+      })

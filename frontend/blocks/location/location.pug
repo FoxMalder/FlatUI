@@ -1,0 +1,15 @@
+//-
+  options.coord - массив c координатами ( [X, Y] )
+  options.adress - адрес
+
+mixin location(options)
+  if !options
+    - options = {}
+
+  .location(data-coord= JSON.stringify(options.coord ? options.coord : []))
+    .location__ymap(id = 'location__ymap')
+    .location__info
+      span Meet us!
+      .location__adress!= options.adress ? options.adress : ''
+      i.fa.fa-crosshairs
+      i.fa.fa-map-marker
