@@ -3246,25 +3246,25 @@
 .search__submit:focus {
   outline: none;
 }
-.search_error .search__text {
+.js-search_error .search__text {
   background-color: #e75735;
 }
-.search_error .search__text[placeholder] {
+.js-search_error .search__text[placeholder] {
   text-overflow: ellipsis;
 }
-.search_error .search__text::-webkit-input-placeholder {
+.js-search_error .search__text::-webkit-input-placeholder {
   color: #fff;
   text-overflow: ellipsis;
 }
-.search_error .search__text::-moz-placeholder {
+.js-search_error .search__text::-moz-placeholder {
   color: #fff;
   text-overflow: ellipsis;
 }
-.search_error .search__text:-moz-placeholder {
+.js-search_error .search__text:-moz-placeholder {
   color: #fff;
   text-overflow: ellipsis;
 }
-.search_error .search__text:-ms-input-placeholder {
+.js-search_error .search__text:-ms-input-placeholder {
   color: #fff;
   text-overflow: ellipsis;
 }

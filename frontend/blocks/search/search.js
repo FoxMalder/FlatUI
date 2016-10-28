@@ -20,15 +20,15 @@ $(function () {
                 return;
             }
 
-            $search.addClass('search_error');
+            $search.addClass('js-search_error');
             $text.val('');
             $text.attr('placeholder', 'I\'ve not found what I\'m looking for...');
         });
 
         $('.search__text', $search).on('focusin', function (event) {
-            if (!$search.hasClass('search_error')) return;
+            if (!$search.hasClass('js-search_error')) return;
 
-            $search.removeClass('search_error');
+            $search.removeClass('js-search_error');
             $text.attr('placeholder', 'Search');
         });
     });
