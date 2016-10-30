@@ -14,6 +14,7 @@ include blocks/drop-down/drop-down
 include blocks/news/news
 include blocks/event/event
 include blocks/location/location
+include blocks/calendar/calendar
 
 html
   head
@@ -110,3 +111,9 @@ html
         coord: [56.4531907, 84.9756513],
         adress: "Tomsk, Krasnoarmeyskaya, 147<br/> office 201"
       })
+    +layout()
+      +layout__left-column
+        h1 calendar
+        +calendar()
+      +layout__right-column
+        h1 messaging
