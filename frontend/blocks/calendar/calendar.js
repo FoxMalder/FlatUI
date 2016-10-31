@@ -9,8 +9,7 @@ $(function () {
         $('.calendar__widget', $(this)).datepicker({
             changeYear: false,
             altField: $day,
-            altFormat: "dd",
-            firstDay: 1
+            altFormat: "dd"
         });
     });
 });
