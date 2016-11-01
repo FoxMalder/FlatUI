@@ -1,0 +1,9 @@
+//-
+  options.videoId - id видео-ролика на Vimeo
+
+mixin video-player(options)
+  if !options
+    - options = {}
+
+  .video-player(data-video-id = options.videoId ? options.videoId : '')
+    .video-player__widget

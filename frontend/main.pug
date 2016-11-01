@@ -16,6 +16,7 @@ include blocks/event/event
 include blocks/location/location
 include blocks/calendar/calendar
 include blocks/messager/messager
+include blocks/video-player/video-player
 
 -
   var user_SarahBrown = {
@@ -125,3 +126,6 @@ html
           user: user_SarahBrown,
           messages: [true, 'Hey! So are we cool to meet at the art gallery? Say 8pm', false, 'Ok))']
         })
+    +layout()
+      h1 video
+      +video-player({videoId: "62980495"})
