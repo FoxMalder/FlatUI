@@ -12,12 +12,15 @@ $(function () {
         $scroller.css('margin-right', - scrollWidth + 'px');
 
         $('.messager__btn-submit', $(this)).on('click', (event) => {
-            let message = $('.messager__input', $(this)).val();
+            let $input = $('.messager__input', $(this)),
+                message = $input.val();
 
             if (message == '') return;
 
             let $message = $('<div class="messager__message messager__message_out"><span>' + message + '</span></div>');
             $chat.append($message);
+
+            $input.val('');
         })
     })
 });
