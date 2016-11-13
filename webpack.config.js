@@ -1,9 +1,9 @@
-'use strict';
 
 const NODE_ENV = process.env.NODE_ENV ||'development';
+
 const webpack = require('webpack');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: __dirname + '/frontend',
@@ -17,7 +17,7 @@ module.exports = {
         filename: 'main.js'
     },
 
-    devtool: 'cheap-inline-module-source-map',
+    devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null,
 
     plugins: [
         new webpack.NoErrorsPlugin(),
@@ -49,11 +49,8 @@ module.exports = {
             loader: 'babel',
             exclude: [
                 /node_modules/,
-                /jquery-ui.js/
-            ],
-            query: {
-                presets: ['es2015']
-            }
+                /frontend\/plugins\/.*\.js$/
+            ]
         }, {
             test: /\.pug$/,
             loader: 'pug'
@@ -69,5 +66,9 @@ module.exports = {
         }],
 
         noParse: /node_modules\/jquery/
+    },
+
+    devServer: {
+        contentBase: './public'
     }
-}
+};
