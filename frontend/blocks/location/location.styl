@@ -4,8 +4,8 @@
   border-radius 0.3rem
   z-index 3000
 
-  &__ymap
-    height 33%
+  &__widget
+    height 22%
 
   &__info
     display flex
@@ -32,3 +32,14 @@
     font-size 1.1rem
     text-transform uppercase
     text-align left
+
+  &__icon
+    font-family FontAwesome
+
+    &_crosshairs::before
+      display block
+      content '\f05b'
+
+    &_map-marker::before
+      display block
+      content '\f041'

@@ -15,7 +15,7 @@ mixin messager(options)
   if !options.messages
     - options.messages = []
 
-  .messager
+  .messager.js-messager
     .messager__user
       .messager__user-name #{options.user.name}
       .messager__user-profile
@@ -23,16 +23,22 @@ mixin messager(options)
           +user-profile(options.user)
     .messager__body
       .messager__links
-        .messager__link-message
-          i.fa.fa-comment
-        .messager__link-photo
-          i.fa.fa-camera
+        a(
+          href = '/mock-address/change-me'
+          target = '_blank'
+          rel = 'noopener noreferrer'
+        ).messager__link-message
+        a(
+          href = '/mock-address/change-me'
+          target = '_blank'
+          rel = 'noopener noreferrer'
+        ).messager__link-photo
       .messager__chat-wrapper
-        .messager__chat-scroller
-          .messager__chat
+        .messager__chat-scroller.js-messager__chat-scroller
+          .messager__chat.js-messager__chat
             - for (var i = 0; i < options.messages.length; i = i + 2)
               .messager__message(class = options.messages[i] ? 'messager__message_in' : 'messager__message_out')
                 span #{options.messages[i + 1]}
-      textarea.messager__input
-      .messager__btn-submit
+      textarea.messager__input.js-messager__input
+      .messager__btn-submit.js-messager__btn-submit
         +button({text: "reply"})

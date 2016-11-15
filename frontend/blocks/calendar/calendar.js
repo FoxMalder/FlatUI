@@ -2,11 +2,12 @@
 
 $(function () {
 
-    $('.calendar').each(function () {
+    $('.js-calendar').each(function () {
 
-        let $day = $('.calendar__day', $(this));
+        let $day = $('.js-calendar__day', $(this));
 
-        $('.calendar__widget', $(this)).datepicker({
+        let $widget = $('.js-calendar__widget', $(this));
+        $widget.datepicker({
             changeYear: false,
             altField: $day,
             altFormat: "dd",
@@ -14,7 +15,7 @@ $(function () {
         });
 
         $('.calendar__btn-today', $(this)).on('click', (event) => {
-            $('.calendar__widget', $(this)).datepicker('setDate', new Date());
+            $widget.datepicker('setDate', new Date());
         })
     });
 });

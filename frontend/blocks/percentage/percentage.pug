@@ -5,6 +5,6 @@ mixin percentage(options)
     - options = {}
 
   .percentage
-    .percentage__active-border(data-percent = options.percent ? options.percent : 0)
+    .percentage__active-border.js-percentage__active-border(data-percent = options.percent || 0)
       .percentage__mask-circle
-        span.percentage__percent 0
+        span.percentage__percent= options.percent || 0

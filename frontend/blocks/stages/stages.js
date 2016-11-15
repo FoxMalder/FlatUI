@@ -2,11 +2,12 @@
 
 $(function () {
 
-    $('.stages').each(function () {
+    $('.js-stages').each(function () {
 
         let progress = $(this).data('progress');
-        let itemsLength = $('.stages__item', $(this)).length;
-        $('.stages__progress', $(this))
+        let itemsLength = $('.js-stages__item', $(this)).length;
+
+        $('.js-stages__progress', $(this))
             .css('width', (100 * (progress - 1) / (itemsLength - 1)) + '%');
     })
 });

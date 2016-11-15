@@ -9,9 +9,9 @@ mixin news(options)
     - options = {}
 
   .news
-    .news__image
+    .news__image-frame
       if options.image
-        img(
+        img.news__image(
           src = require('./blocks/news/img/' + options.image),
           alt = 'news image'
         )

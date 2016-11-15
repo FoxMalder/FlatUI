@@ -2,7 +2,7 @@
 
 $(function () {
 
-    $('.location').each(function () {
+    $('.js-location').each(function () {
         let coord;
         try {
             coord = JSON.parse($(this).data('coord'));
@@ -12,7 +12,7 @@ $(function () {
         }
 
         ymaps.ready(() => {
-            let map = new ymaps.Map($('.location__ymap', $(this))[0], {
+            let map = new ymaps.Map($('.js-location__widget', $(this))[0], {
                 center: coord,
                 zoom: 15,
                 controls: []

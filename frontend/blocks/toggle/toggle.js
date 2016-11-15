@@ -2,7 +2,7 @@
 
 $(function () {
 
-    $('.toggle').on('click', function (event) {
+    $('.js-toggle').on('click', function (event) {
         if ($(this).hasClass('toggle_on'))
             $(this).removeClass('toggle_on');
         else

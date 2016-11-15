@@ -7,9 +7,9 @@ mixin toggle(options)
   if !options
     - options = {}
 
-  .toggle(class = options.state ? 'toggle_on' : '')
+  .toggle.js-toggle(class = options.state ? 'toggle_on' : '')
     .toggle__text
-      .toggle__text-on= options.textOn ? options.textOn : 'on'
-      .toggle__text-off= options.textOff ? options.textOff : 'off'
+      .toggle__text-on= options.textOn || 'on'
+      .toggle__text-off= options.textOff || 'off'
     .toggle__switcher
       .toggle__switch

@@ -1,6 +1,6 @@
 $(function() {
 
-    $('.button')
+    $('.js-button')
         .on('click', function (event) {
         event.preventDefault();
 
@@ -9,7 +9,7 @@ $(function() {
             xPos = event.pageX - btnOffset.left,
             yPos = event.pageY - btnOffset.top;
 
-        $div.addClass('js-button__ripple-effect');
+        $div.addClass('button__ripple-effect');
         $div.css({
                 top: yPos,
                 left: xPos

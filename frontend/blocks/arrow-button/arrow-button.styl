@@ -20,10 +20,17 @@
     background-color color-disabled
     border-color color-disabled
 
-  & .fa-angle-left
-    margin-left -4px
-    margin-top -2px
+  &__arrow
+    font-family FontAwesome
 
-  & .fa-angle-right
-    margin-right -4px
-    margin-top -2px
+    &_left::after
+      display block
+      margin-left -4px
+      margin-top -2px
+      content '\f104'
+
+    &_right::after
+      display block
+      margin-right -4px
+      margin-top -2px
+      content '\f105'

@@ -11,6 +11,7 @@
     align-items stretch
 
   &__input-text
+  &__input-email
   &__textarea
     display block
     width 100%
@@ -24,10 +25,10 @@
     resize none
 
     &:focus
-      outline none
+      outline: 0.3rem auto #4d90fe
 
   &__textarea
-    min-height 8rem
+    min-height 7.3rem
     padding-top 0.8rem
     width 100%
 
@@ -59,6 +60,7 @@
     color white
 
   &__input-text
+  &__input-email
     &:valid + .feedback__validation
       background-color color-first
 

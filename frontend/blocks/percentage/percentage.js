@@ -2,7 +2,7 @@
 
 $(function() {
 
-    $('.percentage__active-border').each(function() {
+    $('.js-percentage__active-border').each(function() {
         var perc = + $(this).data('percent');
         if (isNaN(perc)) return;
         if (perc < 0) perc = 0;

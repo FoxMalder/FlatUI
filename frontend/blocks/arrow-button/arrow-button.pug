@@ -7,4 +7,4 @@ mixin arrow-button(options)
     - options = {}
 
   button.arrow-button(class = options.condition ? 'arrow-button_' + options.condition : '')
-    i.fa(class = options.direction ? 'fa-angle-' + options.direction : 'fa-angle-left')
+    .arrow-button__arrow(class = options.direction ? 'arrow-button__arrow_' + options.direction : 'arrow-button__arrow_left')

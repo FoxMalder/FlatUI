@@ -18,7 +18,7 @@
     display flex
     justify-content center
     background-color color-first-dark
-    height 5.5%
+    height 3.8%
 
     & .user-profile
       margin-bottom -50%
@@ -41,9 +41,23 @@
   &__links
     display flex
     justify-content space-between
+    font-family FontAwesome
     color #8e8d8d
     font-size 1.7rem
     padding 0 1%
+
+  &__link-message
+  &__link-photo
+    text-decoration none
+    color inherit
+
+  &__link-message::before
+    display block
+    content '\f075'
+
+  &__link-photo::before
+    display block
+    content '\f030'
 
   &__chat-wrapper
     overflow hidden
@@ -123,7 +137,6 @@
   &__input
     background-color #e5e5e5
     color #777777
-    border-color white
     border-radius 0.5rem
     border 0.3rem solid white
     text-align left

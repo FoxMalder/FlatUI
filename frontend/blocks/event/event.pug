@@ -12,14 +12,13 @@ mixin event(options)
     - options = {}
 
   .event
-    .event__image
+    .event__image-frame
       if options.image
-        img(
+        img.event__image(
           src = require('./blocks/event/img/' + options.image),
           alt = 'event image'
         )
     .event__preview
-      if (options.dateDay && options.dateMonth)
       .event__date
         .event__day= options.dateDay
         .event__month= options.dateMonth.slice(0, 3)

@@ -20,67 +20,76 @@ include blocks/video-player/video-player
 
 -
   var user_SarahBrown = {
-  name: 'Sarah Brown',
-  profession: 'developer',
-  photo: 'face2.jpg',
-  twitter: 'https://vk.com'
+    name: 'Sarah Brown',
+    profession: 'developer',
+    photo: 'face2.jpg',
+    twitter: 'https://vk.com'
   }
 
 html
   head
-    title FlatUI
     meta(charset = 'utf-8')
+    meta(
+      name = "viewport"
+      content = "initial-scale=1.0, width=device-width"
+    )
+    title FlatUI
+    link(
+      rel = 'icon'
+      type = 'image/vnd.microsoft.icon'
+      href = require('./img/favicon.ico')
+    )
     script(
       src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU',
       type = 'text/javascript'
     )
   body
     +layout()
-      h1 standard buttons
+      h2 standard buttons
       +button({size: 'small'})
       +button()
       +button({type: 'error'})
       +button({type: 'error', size: 'small'})
-      h1 arrow buttons
+      h2 arrow buttons
       +arrow-button({direction: 'left', condition: 'inactive'})
       +arrow-button({direction: 'right', condition: 'inactive'})
       +arrow-button({direction: 'left', condition: 'disabled'})
       +arrow-button({direction: 'right', condition: 'disabled'})
       +arrow-button({direction: 'left'})
       +arrow-button({direction: 'right'})
-      h1 percentages / pie chart
+      h2 percentages / pie chart
       +percentage()
       +percentage({percent: 38})
       +percentage({percent: 62})
       +percentage({percent: 89})
-      +pie-chart({items: [ 1, 3, 4, 5 ]})
+      +pie-chart({items: [1, 3, 4, 5]})
     +layout()
-      h1 sliders
+      h2 sliders
       +layout__left-column()
         +slider({tooltipEnabled: true, color: '#4eb7a8'})
       +layout__right-column()
         +slider({scaleEnabled: true, color: '#e75735'})
     +layout()
-      h1 stages
+      h2 stages
       +stages({length: 5, progress: 3})
     +layout()
-      h1 form elements
+      h2 form elements
       +layout__left-column()
         +feedback()
       +layout__right-column()
-        h1 toggles
+        h2 toggles
         +toggle()
         +toggle({state: true, textOn: 'yes', textOff: 'no'})
-        h1 tick boxes
+        h2 tick boxes
         +tick-box()
         +tick-box({enabled: true})
     +layout()
       +layout__left-column()
-        h1 search / drop down
+        h2 search / drop down
         +search()
         +drop-down({items: ["Choose an option", "First option", "Second option", "Third option"]})
       +layout__right-column()
-        h1 user profile
+        h2 user profile
         +user-profile({
           name: 'Sarah Brown',
           profession: 'developer'
@@ -93,7 +102,7 @@ html
         })
         +user-profile(user_SarahBrown)
     +layout()
-      h1 news & events
+      h2 news & events
       +layout__left-column()
         +news({
           image: "img1.jpg",
@@ -111,21 +120,21 @@ html
           desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         })
     +layout()
-      h1 location
+      h2 location
       +location({
         coord: [56.4531907, 84.9756513],
         adress: "Tomsk, Krasnoarmeyskaya, 147<br/> office 201"
       })
     +layout()
       +layout__left-column
-        h1 calendar
+        h2 calendar
         +calendar()
       +layout__right-column
-        h1 messaging
+        h2 messaging
         +messager({
           user: user_SarahBrown,
           messages: [true, 'Hey! So are we cool to meet at the art gallery? Say 8pm', false, 'Ok))']
         })
     +layout()
-      h1 video
+      h2 video
       +video-player({videoId: "62980495"})
