@@ -55,23 +55,6 @@
 	requireAll(__webpack_require__(2));
 	requireAll(__webpack_require__(10));
 
-	// "webpack": "1.13.2",
-	// "babel-loader": "6.2.5",
-	// "babel-core": "6.17.0",
-	// "babel-preset-es2015": "6.16.0",
-	// "extract-text-webpack-plugin": "1.0.1",
-	// "html-webpack-plugin": "2.22.0",
-	// "pug": "2.0.0-beta6",
-	// "pug-loader": "2.3.0",
-	// "stylus": "0.54.5",
-	// "stylus-loader": "2.3.1",
-	// "css-loader": "0.25.0",
-	// "style-loader": "0.13.1",
-	// "file-loader": "0.9.0",
-
-	// "jquery": "3.1.1",
-	// "@vimeo/player": "1.0.6"
-
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
@@ -29815,7 +29798,7 @@
 
 	$(function () {
 
-	    $('.button').on('click', function (event) {
+	    $('.js-button').on('click', function (event) {
 	        event.preventDefault();
 
 	        var $div = $('<div/>'),
@@ -29823,7 +29806,7 @@
 	            xPos = event.pageX - btnOffset.left,
 	            yPos = event.pageY - btnOffset.top;
 
-	        $div.addClass('js-button__ripple-effect');
+	        $div.addClass('button__ripple-effect');
 	        $div.css({
 	            top: yPos,
 	            left: xPos
@@ -29853,12 +29836,12 @@
 
 	$(function () {
 
-	    $('.calendar').each(function () {
-	        var _this = this;
+	    $('.js-calendar').each(function () {
 
-	        var $day = $('.calendar__day', $(this));
+	        var $day = $('.js-calendar__day', $(this));
 
-	        $('.calendar__widget', $(this)).datepicker({
+	        var $widget = $('.js-calendar__widget', $(this));
+	        $widget.datepicker({
 	            changeYear: false,
 	            altField: $day,
 	            altFormat: "dd",
@@ -29866,7 +29849,7 @@
 	        });
 
 	        $('.calendar__btn-today', $(this)).on('click', function (event) {
-	            $('.calendar__widget', $(_this)).datepicker('setDate', new Date());
+	            $widget.datepicker('setDate', new Date());
 	        });
 	    });
 	});
@@ -29880,7 +29863,7 @@
 
 	$(function () {
 
-	    $('.location').each(function () {
+	    $('.js-location').each(function () {
 	        var _this = this;
 
 	        var coord = void 0;
@@ -29891,7 +29874,7 @@
 	        }
 
 	        ymaps.ready(function () {
-	            var map = new ymaps.Map($('.location__ymap', $(_this))[0], {
+	            var map = new ymaps.Map($('.js-location__widget', $(_this))[0], {
 	                center: coord,
 	                zoom: 15,
 	                controls: []
@@ -29924,18 +29907,18 @@
 
 	$(function () {
 
-	    $('.messager').each(function () {
+	    $('.js-messager').each(function () {
 	        var _this = this;
 
 	        //скрываем скрол в чате
-	        var $scroller = $('.messager__chat-scroller', $(this)),
-	            $chat = $('.messager__chat', $(this)),
+	        var $scroller = $('.js-messager__chat-scroller', $(this)),
+	            $chat = $('.js-messager__chat', $(this)),
 	            scrollWidth = $scroller.width() - $chat.width();
 
 	        $scroller.css('margin-right', -scrollWidth + 'px');
 
-	        $('.messager__btn-submit', $(this)).on('click', function (event) {
-	            var $input = $('.messager__input', $(_this)),
+	        $('.js-messager__btn-submit', $(this)).on('click', function (event) {
+	            var $input = $('.js-messager__input', $(_this)),
 	                message = $input.val();
 
 	            if (message == '') return;
@@ -29957,7 +29940,7 @@
 
 	$(function () {
 
-	    $('.percentage__active-border').each(function () {
+	    $('.js-percentage__active-border').each(function () {
 	        var perc = +$(this).data('percent');
 	        if (isNaN(perc)) return;
 	        if (perc < 0) perc = 0;
@@ -29982,11 +29965,9 @@
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	__webpack_require__(9);
-
 	$(function () {
 
-	    $('.pie-chart__items').peity('donut', {
+	    $('.js-pie-chart__items').peity('donut', {
 	        fill: ['#747474', '#e75735', '#4eb7a8', '#e5e5e5'],
 	        radius: 47.5,
 	        innerRadius: 30.5
@@ -30004,14 +29985,16 @@
 
 	    function search(text) {
 	        //ищем text и возвращаем результат
-	    };
+	    }
 
-	    $('.search').each(function () {
+	    $('.js-search').each(function () {
 
 	        var $search = $(this);
-	        var $text = $('.search__text', $search);
+	        var $text = $('.js-search__text', $search);
 
-	        $('.search__submit', $search).on('click', function (event) {
+	        $('.js-search__submit', $search).on('click', function (event) {
+	            event.preventDefault();
+
 	            if ($text.val() == '') return;
 
 	            var result = search($text.val());
@@ -30020,15 +30003,15 @@
 	                return;
 	            }
 
-	            $search.addClass('js-search_error');
+	            $search.addClass('search_error');
 	            $text.val('');
 	            $text.attr('placeholder', 'I\'ve not found what I\'m looking for...');
 	        });
 
-	        $('.search__text', $search).on('focusin', function (event) {
-	            if (!$search.hasClass('js-search_error')) return;
+	        $text.on('focusin', function (event) {
+	            if (!$search.hasClass('search_error')) return;
 
-	            $search.removeClass('js-search_error');
+	            $search.removeClass('search_error');
 	            $text.attr('placeholder', 'Search');
 	        });
 	    });
@@ -30043,36 +30026,37 @@
 
 	$(function () {
 
-	    $('.slider').each(function () {
+	    $('.js-slider').each(function () {
 
-	        var $handleTooltip = $('.slider__handle-tooltip', $(this));
-	        var $sliderScale = $('.slider__scale', $(this));
+	        var $handleTooltip = $('.js-slider__handle-tooltip', $(this));
+	        var $sliderScale = $('.js-slider__scale', $(this));
 	        var sliderColor = $(this).data('slider-color');
 
-	        $('.slider__widget', $(this)).slider({
+	        $('.js-slider__widget', $(this)).slider({
 	            range: $sliderScale.length ? 'min' : false,
+
 	            create: $handleTooltip.length ? function () {
-	                $handleTooltip = $('.slider__handle-tooltip', $(this));
 	                $handleTooltip.text($(this).slider('value'));
 	            } : function () {},
+
 	            slide: $handleTooltip.length ? function (event, ui) {
 	                $handleTooltip.text(ui.value);
 	            } : function () {}
 	        });
 
-	        if ($sliderScale) $('.ui-slider-range', $(this)).css('background-color', sliderColor);
-	        $('.slider__handle', $(this)).css('background-color', sliderColor);
+	        $('.ui-slider-range', $(this)).css('background-color', sliderColor);
+	        var $handle = $('.js-slider__handle', $(this));
+	        $handle.css('background-color', sliderColor);
 
 	        if ($handleTooltip.length) {
-	            var $handle = $('.slider__handle', $(this));
 	            $handle.on('mousedown', function (event) {
-	                $handleTooltip.addClass('js-slider__handle-tooltip_active');
+	                $handleTooltip.addClass('slider__handle-tooltip_active');
 	            });
 	            $(this).on('mousedown', function (event) {
-	                $handleTooltip.addClass('js-slider__handle-tooltip_active');
+	                $handleTooltip.addClass('slider__handle-tooltip_active');
 	            });
 	            $('body').on('mouseup', function (event) {
-	                $handleTooltip.removeClass('js-slider__handle-tooltip_active');
+	                $handleTooltip.removeClass('slider__handle-tooltip_active');
 	            });
 	        }
 	    });
@@ -30087,11 +30071,12 @@
 
 	$(function () {
 
-	    $('.stages').each(function () {
+	    $('.js-stages').each(function () {
 
 	        var progress = $(this).data('progress');
-	        var itemsLength = $('.stages__item', $(this)).length;
-	        $('.stages__progress', $(this)).css('width', 100 * (progress - 1) / (itemsLength - 1) + '%');
+	        var itemsLength = $('.js-stages__item', $(this)).length;
+
+	        $('.js-stages__progress', $(this)).css('width', 100 * (progress - 1) / (itemsLength - 1) + '%');
 	    });
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
@@ -30104,7 +30089,7 @@
 
 	$(function () {
 
-	    $('.toggle').on('click', function (event) {
+	    $('.js-toggle').on('click', function (event) {
 	        if ($(this).hasClass('toggle_on')) $(this).removeClass('toggle_on');else $(this).addClass('toggle_on');
 	    });
 	});
@@ -30124,14 +30109,14 @@
 
 	$(function () {
 
-	    $('.video-player').each(function () {
+	    $('.js-video-player').each(function () {
 
 	        var options = {
 	            id: $(this).data('video-id'),
 	            width: $(this).width()
 	        };
 
-	        new _player2.default($('.video-player__widget', $(this))[0], options);
+	        new _player2.default($('.js-video-player__widget', $(this))[0], options);
 	    });
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
